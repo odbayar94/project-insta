@@ -1,13 +1,11 @@
 import React, {lazy} from 'react';
 import {Switch, Route} from 'react-router-dom';
-
-const Login = lazy(() => import('../pages/Login'));
+import Login from '../pages/Login';
 
 function App() {
   return (
-    <Switch>
-      <Route path="/login" component={Login}/>
-    </Switch>
+    <Login/>
+  
     
    
   );
