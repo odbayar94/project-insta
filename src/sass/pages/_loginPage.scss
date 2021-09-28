@@ -40,6 +40,7 @@
         overflow: hidden;
         text-indent: 110%;
         white-space: nowrap;
+        font-family: inherit;
     }
     &__username{
         display: block;
@@ -78,13 +79,13 @@
         border-radius: 7px;
      }
     
-     .iphone__header{
+     &__iphone-header{
         margin: 99px 0 0 151px;
         position: relative;
     
      }
     
-     .image__section{
+     &__image-section{
         display: flex;
         background-image: url(https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png);
         height: 618px;
@@ -99,7 +100,7 @@
         border-radius: 1px;
      }
     
-     .line{
+     &__line{
          display: flex;
         flex-grow: 1;
         flex-shrink: 1;
@@ -121,7 +122,7 @@
         text-transform: uppercase;
      }
     
-     &__line{
+     &__line-abstract{
          display: flex;
         flex-direction: row;
         margin: 20px 40px 18px;

@@ -3,9 +3,9 @@ import React from 'react';
 const Login = () => {
   return (
     <div className="login">
-    <div className="image__section">
-      <div className="iphone__header">
-        <div className="iphone__image">
+    <div className="login__image-section">
+      <div className="login__iphone-header">
+        <div className="login__iphone-image">
         <img className="RP4i1 JtrJi " src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" alt=""/>
         </div>
       </div>
@@ -40,10 +40,10 @@ const Login = () => {
   <div className="login__forget">
    
    <div className="login__line">
-      <div className="line">
+      <div className="login__line-abstract">
     </div>
   <div className="login__text-or">or</div>
-  <div className="line">
+  <div className="login__line-abstract">
   </div>
   </div>
     <div className="login__forget-text">
