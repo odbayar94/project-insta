@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import { CookiesProvider } from "react-cookie";
+import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 
 import { Provider } from 'react-redux';
 
-import store from './redux/store';
+import reportWebVitals from './reportWebVitals';
+import { CookiesProvider } from "react-cookie";
+
 import './sass/main.scss';
+import store from './redux/store';
+import App from './components/App/App';
 
 ReactDOM.render(
-  <Provider store={store}> 
-  <BrowserRouter>
-    <App />
-    </BrowserRouter>
-  </Provider>,
+  <CookiesProvider>
+     <Provider store={store}>
+      <BrowserRouter>
+      <App />
+      </BrowserRouter>
+      </Provider>
+    
+  </CookiesProvider>,
   document.getElementById('root')
 );
 
