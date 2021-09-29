@@ -49,6 +49,6 @@ export const loginUserStart = () => {
   export const loginUserError = (error: Error) => {
     return {
       type: userTypes.SIGN_IN_FAILURE,
-      error,
+      errorMessage: error,
     };
   };  

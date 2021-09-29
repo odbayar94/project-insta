@@ -1,8 +1,10 @@
 import React, { useEffect,useState } from 'react';
 import { Button } from 'reactstrap';
 import { useSelector, useDispatch } from "react-redux";
-import { loginUser } from "../../redux/user/userActions"
 
+import classNames from "classnames";
+
+import { loginUser } from "../../redux/user/userActions"
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 const LoginPage = () => {
@@ -11,17 +13,27 @@ const LoginPage = () => {
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [submitDisabled, setSubmitDisabled] = useState(false);
+ 
+  var loginButtonClass = classNames({
+    'login__submit-btn': true,
+    'login__submit-btn-active': submitDisabled,
+  })
+ 
 
-const changeUserName = ()=>{
+  useEffect(()=>{
+
+  },[]);
+
+
+const changeUserName = (e: any)=>{
+  setUserName(e.target.value);
   }
-const changePassword = ()=>{
-
+const changePassword = (e: any) => {
+  setPassword(e.target.value);
 }
   const login = ()=>{
-   const username = 'od';
-   const password = "1231";
     dispatch(loginUser(username, password) as any);
-    console.log("Hello");
   }
   return (
     <div className="login">
@@ -39,6 +51,7 @@ const changePassword = ()=>{
           Instagram
         </h1>
       </div>
+      {user.error ? (<div>Алдаа гарлаа</div>) : null}
     <form>
       <div className="login__username">
         <label>
@@ -54,7 +67,7 @@ const changePassword = ()=>{
     <div className="login__submit">
       <label>
      
-      <Button className="login__submit-btn" onClick={login}>Login In</Button>
+      <Button className={loginButtonClass} onClick={login} disabled={!submitDisabled}>Login In</Button>
   
       </label>
    

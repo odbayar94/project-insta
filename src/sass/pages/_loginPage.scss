@@ -124,7 +124,7 @@
         flex-grow: 1;
         flex-shrink: 1;
         background-color: #dbdbdb;
-        background-color: rgba(var(--b38,219,219,219),1);
+        background-color: $color-inactive-blue;
         height: 1px;
         position: relative;
         top: .45em;
@@ -132,5 +132,8 @@
      &__forget{
          display: flex;
          flex-direction: column;
+     }
+     &__submit-btn-active{
+         background-color: $color-active-blue;
      }
 }
