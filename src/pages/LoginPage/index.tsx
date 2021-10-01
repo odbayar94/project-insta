@@ -13,7 +13,7 @@ const LoginPage = () => {
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [submitDisabled, setSubmitDisabled] = useState(false);
+  const [submitDisabled, setSubmitDisabled] = useState(true);
  
   var loginButtonClass = classNames({
     'login__submit-btn': true,
