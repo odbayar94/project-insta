@@ -33,7 +33,7 @@ export const Post = ({
 			<header className="post__header">
 				<div className="post__account">
 					<div className="post__profile__pic">
-							<img src={userProfile} />
+							<img src={userProfile} alt=""/>
 						</div>
 					<div className="post__account__username">{username}</div>
 				</div>
@@ -84,7 +84,7 @@ export const Post = ({
 	return (
 		<article className="post__card">
 			<PostHeader username={username} />
-			<img src={imgUrl} />
+			<img src={imgUrl} alt={username}/>
 			<PostFooter
 				username={username}
 				caption={caption}

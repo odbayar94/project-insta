@@ -7,9 +7,12 @@ import { logOut } from "../redux/user/userActions"
 export const LogOut = ()=>{
     useAppSelector(state => state.userReducer); 
     const dispatch = useAppDispatch();
-    useEffect(() => {
-        dispatch(logOut() as any);
-      }, []);
-    
+
+    //dispatch(logOut() as any);
+    useEffect(() => { 
+                      dispatch(logOut() as any); 
+                        }, 
+          [dispatch]);
+
       return <Redirect to="/login" />;
 }

@@ -13,11 +13,14 @@ const LoginPage = () => {
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [submitDisabled, setSubmitDisabled] = useState(true);
+  // const [submitDisabled, setSubmitDisabled] = useState(true);
+  // const [userValid, setUserValid] = useState(false);
+  // const [passValid, setPassValid] = useState(false);
+
  
   var loginButtonClass = classNames({
     'login__submit-btn': true,
-    'login__submit-btn-active': submitDisabled,
+    'login__submit-btn-active': true,
   })
  
 
@@ -28,9 +31,12 @@ const LoginPage = () => {
 
 const changeUserName = (e: any)=>{
   setUserName(e.target.value);
+  user.error = false;
+  
   }
 const changePassword = (e: any) => {
   setPassword(e.target.value);
+  user.error = false;
 }
   const login = ()=>{
     dispatch(loginUser(username, password) as any);
@@ -54,7 +60,7 @@ const changePassword = (e: any) => {
           Instagram
         </h1>
       </div>
-      {user.error ? (<div>Алдаа гарлаа</div>) : null}
+      {user.error ? (<div className="login__errorMessage">{user.errorMessage}</div>) : null}
     <form>
       <div className="login__username">
         <label>
@@ -70,7 +76,7 @@ const changePassword = (e: any) => {
     <div className="login__submit">
       <label>
      
-      <Button className={loginButtonClass} onClick={login} disabled={!submitDisabled}>Login In</Button>
+      <Button className={loginButtonClass} onClick={login} disabled={false}>Login In</Button>
   
       </label>
    

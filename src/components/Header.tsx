@@ -5,7 +5,6 @@ import {
 	AiOutlineProfile,
 	AiOutlineLogout,
 } from "react-icons/ai";
-import { BiSearch } from "react-icons/bi";
 import { RiMessengerLine } from "react-icons/ri";
 import { Link} from "react-router-dom";
 import { IconContext } from "react-icons";

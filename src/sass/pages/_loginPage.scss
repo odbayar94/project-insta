@@ -23,7 +23,9 @@
         border-radius: 1px;
         padding: 20px 0;
     }
-    
+    &__header{
+        margin-bottom: 30px;
+    }
     &__header-img{
         background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_32f0a4f27407.png/32f0a4f27407.png);
         background-repeat: no-repeat;
@@ -134,4 +136,12 @@
      &__submit-btn-active{
          background-color: $color-active-blue;
      }
+
+     &__errorMessage{
+         color: red;
+         margin-bottom:3px;
+         margin-top: -25px;
+     }
+
+
 }

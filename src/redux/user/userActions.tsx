@@ -17,8 +17,8 @@ export const loginUser = (username: String, password: String) => async (dispatch
       .post(REST_API_URL + "/users/login", data)
       .then((result) => {
         // LocalStorage ruu hadgalna
-        const token = result.data.token;
-        const userId = result.data.userId;
+        const token = result.data.user.token;
+        const userId = result.data.user.userId;
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("userId", userId);
        
@@ -46,10 +46,10 @@ export const loginUserStart = () => {
     };
   };
   
-  export const loginUserError = (error: Error) => {
+  export const loginUserError = (error: any) => {
     return {
       type: userTypes.SIGN_IN_FAILURE,
-      errorMessage: error,
+      errorMessage: error.response.data.error.message,
     };
   };  
 
