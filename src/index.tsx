@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
+import {BrowserRouter } from "react-router-dom";
 
 import { Provider } from 'react-redux';
 
@@ -9,15 +9,18 @@ import { CookiesProvider } from "react-cookie";
 
 import './sass/main.scss';
 import store from './redux/store';
-import App from './components/App/App';
+import App from './App';
 
 ReactDOM.render(
   <CookiesProvider>
      <Provider store={store}>
+     <React.StrictMode>
       <BrowserRouter>
       <App />
       </BrowserRouter>
+      </React.StrictMode>
       </Provider>
+   
     
   </CookiesProvider>,
   document.getElementById('root')

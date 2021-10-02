@@ -7,15 +7,18 @@ import {
 } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { RiMessengerLine } from "react-icons/ri";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { IconContext } from "react-icons";
 
-export const Header = () => {
-	const history = useHistory();
+import { useAppSelector, useAppDispatch } from '../redux/hooks'
+import { logOut } from "../redux/user/userActions"
 
-	const logout = () => {
-		sessionStorage.removeItem("user");
-		history.push("/signin");
+export const Header = () => {
+	useAppSelector(state => state.userReducer); 
+    const dispatch = useAppDispatch();
+
+	const logOutFunction = () => {	
+		dispatch(logOut() as any);
 	};
 
 	return (
@@ -40,7 +43,7 @@ export const Header = () => {
 					<Link to="/profile" className="page-link">
 						<AiOutlineProfile />
 					</Link>
-					<AiOutlineLogout onClick={logout} className="page-link" />
+					<AiOutlineLogout onClick={logOutFunction} className="page-link" />
 				</div>
 			</IconContext.Provider>
 		</nav>

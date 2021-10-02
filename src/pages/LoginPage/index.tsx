@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import { useSelector, useDispatch } from "react-redux";
 
 import classNames from "classnames";
 
@@ -36,6 +36,9 @@ const changePassword = (e: any) => {
     dispatch(loginUser(username, password) as any);
   }
   return (
+    <>
+    {user.token && <Redirect to="/"/>}
+
     <div className="login">
     <div className="login__image-section">
       <div className="login__iphone-header">
@@ -97,6 +100,7 @@ const changePassword = (e: any) => {
   </div>
   </div>
  </div>
+ </>
   );
 }
 

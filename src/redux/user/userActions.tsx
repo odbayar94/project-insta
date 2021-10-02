@@ -19,9 +19,9 @@ export const loginUser = (username: String, password: String) => async (dispatch
         // LocalStorage ruu hadgalna
         const token = result.data.token;
         const userId = result.data.userId;
-
-        localStorage.setItem("userId", userId);
-        localStorage.setItem("token", token);
+        sessionStorage.setItem("token", token);
+        sessionStorage.setItem("userId", userId);
+       
 
         dispatch(loginUserSuccess(token, userId));
       })
@@ -52,3 +52,13 @@ export const loginUserStart = () => {
       errorMessage: error,
     };
   };  
+
+
+  export function logOut (){
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("userId");
+    console.log("logged out");
+    return {
+      type: userTypes.LOGOUT,
+    };
+  };

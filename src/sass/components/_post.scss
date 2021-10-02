@@ -1,0 +1,56 @@
+.post{
+    &__btn {
+        width: 15%;
+        background-color: #fff;
+        border-color: #fff;
+        color: #0095f6;
+        border: none;
+        cursor: pointer;
+    }
+    
+&__card {
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	margin: 10px 0;
+	background-color: #fff;
+    img {
+        width: 614px;
+        height: 614px;
+    }
+}
+
+
+/* post-card */
+&__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+&__footer {
+	font-size: 0.9em;
+    svg {
+        font-size: 2em;
+    }
+    svg:nth-child(2) {
+        margin-left: 10px;
+    }
+}
+&__list{
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+}
+&__profile__pic {
+        border-radius: 50%;
+        border: 2px solid red;
+        width: 40px;
+        height: 40px;
+    img{
+        border-radius: 50%;
+        width:100%;
+        height: 100%;
+    }
+}
+}

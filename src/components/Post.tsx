@@ -22,6 +22,7 @@ export const Post = ({
 	username,
 	caption,
 	imgUrl,
+	userProfile,
 	likesQuantity,
 	commentUsername,
 	comment,
@@ -29,9 +30,11 @@ export const Post = ({
 }: IPost) => {
 	const PostHeader = ({ username }: PostHeader) => {
 		return (
-			<header className="post-header">
+			<header className="post__header">
 				<div className="account-name">
-					<div className="profile-pic" />
+					<div className="post__profile__pic">
+							<img src={userProfile} />
+						</div>
 					<p>{username}</p>
 				</div>
 				<FiMoreHorizontal style={{ cursor: "pointer" }} />
@@ -42,7 +45,7 @@ export const Post = ({
 	const PostFooter = ({ username, caption, likesQuantity }: PostFooter) => {
 		return (
 			<>
-				<div className="post-footer spacing10">
+				<div className="post__footer spacing10">
 					<AiOutlineHeart />
 					<AiOutlineMessage />
 					<p>{`${likesQuantity}`} likes</p>
@@ -62,7 +65,7 @@ export const Post = ({
 	}: PostComment) => {
 		return (
 			<>
-				<div className="post-comment">
+				<div className="post__comment">
 					<div className="user-comments">
 						<span className="username">{commentUsername}</span>
 						<span className="comment">{comment}</span>
@@ -72,14 +75,14 @@ export const Post = ({
 				<p className="time-stamp">{timeStamp}</p>
 				<div className="add-comment">
 					<input id="comment-input" placeholder="Add a comment..." />
-					<input type="button" value="Post" className="post-btn" />
+					<input type="button" value="Post" className="post__btn" />
 				</div>
 			</>
 		);
 	};
 
 	return (
-		<article className="post-card">
+		<article className="post__card">
 			<PostHeader username={username} />
 			<img src={imgUrl} />
 			<PostFooter
