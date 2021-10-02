@@ -87,8 +87,10 @@ const Feed = () => {
 					<Post {...post} key={post.id} />
 				))}
 			</div>
-			<div>
+			<div className="info__section">
+				<div className="info__list">
 				<ProfileCard />
+					</div>
 			</div>
 		</main>
 		</>

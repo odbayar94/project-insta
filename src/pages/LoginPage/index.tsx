@@ -50,7 +50,7 @@ const changePassword = (e: any) => {
     <div className="login__container">
       <div className="login__form">
       <div className="login__header">
-        <h1 className="login__header-h1 login__header-img login__header-text">
+        <h1 className="login__header-img login__header-text">
           Instagram
         </h1>
       </div>

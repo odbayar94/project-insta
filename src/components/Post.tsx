@@ -31,11 +31,11 @@ export const Post = ({
 	const PostHeader = ({ username }: PostHeader) => {
 		return (
 			<header className="post__header">
-				<div className="account-name">
+				<div className="post__account">
 					<div className="post__profile__pic">
 							<img src={userProfile} />
 						</div>
-					<p>{username}</p>
+					<div className="post__account__username">{username}</div>
 				</div>
 				<FiMoreHorizontal style={{ cursor: "pointer" }} />
 			</header>
@@ -50,9 +50,9 @@ export const Post = ({
 					<AiOutlineMessage />
 					<p>{`${likesQuantity}`} likes</p>
 				</div>
-				<div className="spacing10">
-					<span className="username">{username}</span>
-					<span className="caption">{caption}</span>
+				<div className="post__caption">
+					<span className="post__username">{username}</span>
+					<span className="post__caption__text">{caption}</span>
 				</div>
 			</>
 		);

@@ -53,4 +53,32 @@
         height: 100%;
     }
 }
+&__comment {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 10px;
+}
+&__account {
+	display: flex;
+	align-items: center;
+
+    &__username {
+        color: $color-black;
+        margin-left: 10px;
+        font-weight: 700;
+        font-size: $default-font-size;
+    }
+}
+
+&__caption{
+    margin-left: 10px;
+    &__text{
+        font-size: $default-font-size;
+        margin-left: 5px;
+    }
+}
+&__username{
+    font-size: $default-font-size;
+    font-weight: 700;
+}
 }

@@ -11,6 +11,7 @@
 	border-radius: 5px;
 	margin-top: 10px;
 	margin-left: 10px;
+	
 }
 
 &__img {
@@ -33,13 +34,13 @@
 
 &__username {
 	color: $color-username;
-	font-size: 0.9em;
+	font-size: $default-font-size;
 	font-weight: 700;
 }
 
 &__firstname {
 	color: $color-firstname;
-	font-size: 0.9em;
+	font-size: $default-font-size;
 	font-weight: 100;
 }
 }

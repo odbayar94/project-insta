@@ -22,14 +22,15 @@ export const Header = () => {
 	};
 
 	return (
-		<nav className="page-header">
-			<h2>Instagram</h2>
-			<BiSearch
-				style={{ position: "absolute", left: "40%" }}
-				size="0.9em"
-				color="#8e8e8e"
-			/>
-			<input type="text" id="search" placeholder="Search" />
+		<nav className="pageheader">
+			<div><img src="https://instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="Instagram"/></div>
+			<div className="searchbar">
+				
+			<div className="searchbar__input">
+			<input type="text" id="search" className="searchbar__input-field" placeholder="Search" />
+				<span className="coreSpriteSearchIcon"></span>
+			</div>
+			</div>
 			<IconContext.Provider value={{ className: "header-icons" }}>
 				<div className="icons">
 					<Link to="/feed" className="page-link">
