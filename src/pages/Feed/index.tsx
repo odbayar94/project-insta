@@ -25,9 +25,9 @@ const Feed = () => {
 		 <Header/>
 		<main className="feed__container">
 			<div className="post__list">
-				{postList.map((post) => (
-					<Post {...post} key={post.id} />
-				))}
+				{postList.map((post) => {
+					return <Post {...post} key={post._id} />
+				})}
 			</div>
 			<div className="info__section">
 				<div className="info__list">
