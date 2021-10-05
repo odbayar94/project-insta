@@ -7,7 +7,7 @@ type PostHeader = {
 };
 
 type PostFooter = {
-	username: string;
+	username?: string;
 	caption?: string;
 	likesQuantity?: number;
 };
@@ -28,21 +28,23 @@ export const Post = ({
 	comment,
 	timeStamp,
 }: IPost) => {
-	const PostHeader = ({ username }: PostHeader) => {
+	// const PostHeader = ({ username }: PostHeader) => {
+		const PostHeader = () => {
 		return (
 			<header className="post__header">
 				<div className="post__account">
 					<div className="post__profile__pic">
 							<img src={userProfile} alt=""/>
 						</div>
-					<div className="post__account__username">{username}</div>
+					{/* <div className="post__account__username">{username}</div> */}
+					<div className="post__account__username"></div>
 				</div>
 				<FiMoreHorizontal style={{ cursor: "pointer" }} />
 			</header>
 		);
 	};
 
-	const PostFooter = ({ username, caption, likesQuantity }: PostFooter) => {
+	const PostFooter = ({ caption, likesQuantity }: PostFooter) => {
 		return (
 			<>
 				<div className="post__footer spacing10">
@@ -51,7 +53,7 @@ export const Post = ({
 					<p>{`${likesQuantity}`} likes</p>
 				</div>
 				<div className="post__caption">
-					<span className="post__username">{username}</span>
+					<span className="post__username"></span>
 					<span className="post__caption__text">{caption}</span>
 				</div>
 			</>
@@ -83,18 +85,25 @@ export const Post = ({
 
 	return (
 		<article className="post__card">
-			<PostHeader username={username} />
+			{/* <PostHeader username={username} /> */}
+			<PostHeader/>
 			<img src={imgUrl} alt={username}/>
-			<PostFooter
+			{/* <PostFooter
 				username={username}
 				caption={caption}
 				likesQuantity={likesQuantity}
+			/> */}
+<PostFooter
+				
+				caption={caption}
+				likesQuantity={likesQuantity}
 			/>
-			<PostComment
+			
+			{/* <PostComment
 				commentUsername={commentUsername}
 				comment={comment}
 				timeStamp={timeStamp}
-			/>
+			/> */}
 		</article>
 	);
 };

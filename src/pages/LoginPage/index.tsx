@@ -13,14 +13,14 @@ const LoginPage = () => {
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  // const [submitDisabled, setSubmitDisabled] = useState(true);
+  const [submitDisabled, setSubmitDisabled] = useState(true);
   // const [userValid, setUserValid] = useState(false);
   // const [passValid, setPassValid] = useState(false);
 
  
   var loginButtonClass = classNames({
     'login__submit-btn': true,
-    'login__submit-btn-active': true,
+    'login__submit-btn-active': submitDisabled,
   })
  
 
@@ -76,7 +76,7 @@ const changePassword = (e: any) => {
     <div className="login__submit">
       <label>
      
-      <Button className={loginButtonClass} onClick={login} disabled={false}>Login In</Button>
+      <Button className={loginButtonClass} onClick={login} disabled={!submitDisabled}>Login In</Button>
   
       </label>
    
