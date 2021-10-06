@@ -15,7 +15,6 @@ export const postLoad = () => async function(dispatch: Dispatch) {
     axios
       .get(REST_API_URL + "/posts")
       .then((result) => {
-        console.log(result.data.data);
         dispatch(postLoadSuccess(result.data.data));
       })
       .catch((err) => {

@@ -10,14 +10,6 @@ export const INITIAL_STATE = {
     token: Cookies.get("token"),
   };
   
-
-// interface IAction<T> extends Action<string> {
-//     type: string;
-//     payload?: T;
-//     error?: boolean;
-//     meta?: any;
-// }
-
 const userReducer = (state=INITIAL_STATE, action: any) => {
     switch (action.type) {
         case userTypes.SIGN_IN_START:
