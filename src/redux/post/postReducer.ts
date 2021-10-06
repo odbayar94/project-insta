@@ -1,4 +1,5 @@
 import postTypes from './postTypes';
+import Cookies from "js-cookie";
 
 export const INITIAL_STATE = {
     currentUser: null,
@@ -7,7 +8,7 @@ export const INITIAL_STATE = {
     errorMessage: null,
     userId: null,
     posts: [],
-    token: sessionStorage.getItem('token'),
+    token: Cookies.get('token'),
   };
   
 
@@ -17,7 +18,7 @@ const postReducer = (state=INITIAL_STATE, action: any) => {
         case postTypes.POST_LOAD_START:
             return {...state, loadingPage: true}
         case postTypes.POST_LOAD_SUCCESS:
-            return {...state, loadingPage: false, posts: action.posts}
+            return {...state, loadingPage: false, posts: action.data}
         case postTypes.POST_LOAD_FAILURE:
           return {...state, logginIn: false, error: true, errorMessage: action.errorMessage}
         default:

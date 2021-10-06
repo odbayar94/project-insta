@@ -1,5 +1,8 @@
 import { Dispatch } from 'redux';
 import axios from "axios";
+import Cookies from "js-cookie";
+
+
 
 import { REST_API_URL } from '../constants';
 import userTypes from './userTypes';
@@ -17,16 +20,30 @@ export const loginUser = (username: String, password: String) => async (dispatch
       .post(REST_API_URL + "/users/login", data)
       .then((result) => {
         // LocalStorage ruu hadgalna
-        const token = result.data.user.token;
-        const userId = result.data.user.userId;
-        sessionStorage.setItem("token", token);
-        sessionStorage.setItem("userId", userId);
-       
+        // sessionStorage.setItem("token", result.data.user.token);
+        // sessionStorage.setItem("userId", result.data.user.userId);
 
-        dispatch(loginUserSuccess(token, userId));
+        //Set cookie
+        //  set(name, value, [options]) 
+        Cookies.set("token",  result.data.user.token);
+
+        dispatch(loginUserSuccess( result.data.user.token, result.data.user.userId));
       })
       .catch((err) => {
-        dispatch(loginUserError(err));
+        if(!err.response){
+          const error = {
+            response:{
+                          data:{
+                            error:{
+                              message: "Сервертэй холбогдоход алдаа гарлаа"
+                            }
+                          }
+                        }};
+          
+          dispatch(loginUserError(error));
+        }else{
+          dispatch(loginUserError(err));
+        }
       });
     
 }
@@ -55,8 +72,7 @@ export const loginUserStart = () => {
 
 
   export function logOut (){
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("userId");
+   Cookies.remove("token");
     console.log("logged out");
     return {
       type: userTypes.LOGOUT,

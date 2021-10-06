@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import Cookies from "js-cookie";
 
 import classNames from "classnames";
 
@@ -8,6 +9,7 @@ import { loginUser } from "../../redux/user/userActions"
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 const LoginPage = () => {
+  const token = Cookies.get("token");
   const user = useAppSelector(state => state.userReducer); 
   const dispatch = useAppDispatch();
 
@@ -25,7 +27,7 @@ const LoginPage = () => {
  
 
   useEffect(()=>{
-
+    
   },[]);
 
 
@@ -43,7 +45,8 @@ const changePassword = (e: any) => {
   }
   return (
     <>
-    {user.token && <Redirect to="/"/>}
+    
+    {token && user.token && <Redirect to="/"/>}
 
     <div className="login">
     <div className="login__image-section">

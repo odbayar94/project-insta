@@ -20,8 +20,6 @@ ReactDOM.render(
       </BrowserRouter>
       </React.StrictMode>
       </Provider>
-   
-    
   </CookiesProvider>,
   document.getElementById('root')
 );

@@ -1,4 +1,5 @@
 import userTypes from './userTypes';
+import Cookies from "js-cookie";
 
 export const INITIAL_STATE = {
     currentUser: null,
@@ -6,7 +7,7 @@ export const INITIAL_STATE = {
     error: false,
     errorMessage: null,
     userId: null,
-    token: sessionStorage.getItem('token'),
+    token: Cookies.get("token"),
   };
   
 
