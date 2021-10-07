@@ -11,6 +11,12 @@
 # production
 /build
 
+#test
+/test
+test-report.html
+calculator.js
+/coverage
+
 # misc
 .DS_Store
 .env.local
